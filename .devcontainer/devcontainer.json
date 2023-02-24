@@ -7,54 +7,55 @@
         "esbenp.prettier-vscode",
         "mads-hartmann.bash-ide-vscode"
       ],
-
-      "codesnap.boxShadow": "rgba(0, 0, 0, 0.55) 0px 0px 0px",
-      "codesnap.containerPadding": "0",
-      "codesnap.roundedCorners": false,
-      "codesnap.showWindowControls": false,
-      "codesnap.shutterAction": "copy",
-      "codesnap.transparentBackground": true,
-      "editor.fontFamily": "'FiraCode NF', 'FiraCode Nerd Font', 'Fira Code', 'FiraCode', Consolas, 'Courier New', monospace",
-      "editor.fontLigatures": false,
-      "editor.formatOnSave": true,
-      "editor.rulers": [80, 120],
-      "eslint.format.enable": false,
-      "extensions.ignoreRecommendations": true,
-      "extension-uninstaller.uninstall": [
-        "github.copilot",
-        "github.copilot-nightly",
-        "ms-toolsai.jupyter",
-        "tabnine.tabnine-vscode"
-      ],
-      "files.watcherExclude": {
-        "**/.git/objects/**": true,
-        "**/.git/subtree-cache/**": true,
-        "**/node_modules/*/**": true
-      },
-      "git.autofetch": true,
-      "git.confirmSync": false,
-      "git.enableSmartCommit": true,
-      "java.checkstyle.configuration": "/google_checks.xml",
-      "java.compile.nullAnalysis.mode": "automatic",
-      "telemetry.telemetryLevel": "off",
-      "terminal.integrated.defaultProfile.linux": "zsh",
-      "window.autoDetectColorScheme": true,
-      "workbench.editor.closeOnFileDelete": true,
-      "workbench.iconTheme": "vscode-icons",
-      "workbench.preferredDarkColorTheme": "GitHub Dark Default",
-      "workbench.preferredLightColorTheme": "GitHub Light Default",
-      "workbench.tips.enabled": false,
-      "workbench.welcomePage.walkthroughs.openOnInstall": false,
-      "[javascript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode",
-        "editor.formatOnSave": true
-      },
-      "[json]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode",
-        "editor.formatOnSave": true
-      },
-      "[xml]": {
-        "editor.defaultFormatter": "redhat.vscode-xml"
+      "settings": {
+        "codesnap.boxShadow": "rgba(0, 0, 0, 0.55) 0px 0px 0px",
+        "codesnap.containerPadding": "0",
+        "codesnap.roundedCorners": false,
+        "codesnap.showWindowControls": false,
+        "codesnap.shutterAction": "copy",
+        "codesnap.transparentBackground": true,
+        "editor.fontFamily": "'FiraCode NF', 'FiraCode Nerd Font', 'Fira Code', 'FiraCode', Consolas, 'Courier New', monospace",
+        "editor.fontLigatures": false,
+        "editor.formatOnSave": true,
+        "editor.rulers": [80, 120],
+        "eslint.format.enable": false,
+        "extensions.ignoreRecommendations": true,
+        "extension-uninstaller.uninstall": [
+          "github.copilot",
+          "github.copilot-nightly",
+          "ms-toolsai.jupyter",
+          "tabnine.tabnine-vscode"
+        ],
+        "files.watcherExclude": {
+          "**/.git/objects/**": true,
+          "**/.git/subtree-cache/**": true,
+          "**/node_modules/*/**": true
+        },
+        "git.autofetch": true,
+        "git.confirmSync": false,
+        "git.enableSmartCommit": true,
+        "java.checkstyle.configuration": "/google_checks.xml",
+        "java.compile.nullAnalysis.mode": "automatic",
+        "telemetry.telemetryLevel": "off",
+        "terminal.integrated.defaultProfile.linux": "zsh",
+        "window.autoDetectColorScheme": true,
+        "workbench.editor.closeOnFileDelete": true,
+        "workbench.iconTheme": "vscode-icons",
+        "workbench.preferredDarkColorTheme": "GitHub Dark Default",
+        "workbench.preferredLightColorTheme": "GitHub Light Default",
+        "workbench.tips.enabled": false,
+        "workbench.welcomePage.walkthroughs.openOnInstall": false,
+        "[javascript]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode",
+          "editor.formatOnSave": true
+        },
+        "[json]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode",
+          "editor.formatOnSave": true
+        },
+        "[xml]": {
+          "editor.defaultFormatter": "redhat.vscode-xml"
+        }
       }
     }
   },
