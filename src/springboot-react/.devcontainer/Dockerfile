@@ -1,4 +1,4 @@
-FROM froland/devcontainer-java-nodejs:latest AS builder
+FROM froland/devcontainer-java-nodejs:latest
 RUN su vscode -c "umask 0002 \
     && . ${SDKMAN_DIR}/bin/sdkman-init.sh \
     && sdk install springboot \
@@ -9,7 +9,7 @@ RUN su vscode -c "umask 0002 \
 COPY pom.xml /tmp/springboot/pom.xml
 RUN su vscode -c "umask 0002 \
     && cd /tmp/springboot \
-    && ./mvnw dependency:sources package clean \
+    && ./mvnw dependency:go-offline dependency:sources package clean \
     && cd /tmp \
     && rm -rf springboot"
 RUN su vscode -c "umask 0002 \
