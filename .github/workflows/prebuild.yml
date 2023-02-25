@@ -1,13 +1,13 @@
-name: 'Prebuild dev container images'
+name: "Prebuild dev container images"
 
 on:
   push:
     tags:
-    - 'v*'
+      - "v*"
 
 jobs:
   build:
-    runs-on: devcontainer-image-builder-ubuntu
+    runs-on: ubuntu-latest
     steps:
       - name: Free more space
         id: free_space
