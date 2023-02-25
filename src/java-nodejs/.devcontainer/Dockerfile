@@ -1,1 +1,1 @@
-FROM mcr.microsoft.com/vscode/devcontainers/java:0-17
+FROM froland/devcontainer-java:latest

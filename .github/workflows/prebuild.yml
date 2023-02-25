@@ -6,8 +6,26 @@ on:
       - "v*"
 
 jobs:
+  prebuild-java:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout (GitHub)
+        uses: actions/checkout@v3
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: Prebuild java dev container
+        uses: devcontainers/ci@v0.3
+        with:
+          cacheFrom: froland/devcontainer-java
+          imageName: froland/devcontainer-java
+          push: always
+          subFolder: src/java
   prebuild-java-nodejs:
     runs-on: ubuntu-latest
+    needs: preduild-java
     steps:
       - name: Checkout (GitHub)
         uses: actions/checkout@v3
@@ -41,3 +59,21 @@ jobs:
           imageName: froland/devcontainer-springboot-react
           push: always
           subFolder: src/springboot-react
+  prebuild-plantuml:
+    runs-on: ubuntu-latest
+    needs: preduild-java
+    steps:
+      - name: Checkout (GitHub)
+        uses: actions/checkout@v3
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: Prebuild plantuml dev container
+        uses: devcontainers/ci@v0.3
+        with:
+          cacheFrom: froland/devcontainer-plantuml
+          imageName: froland/devcontainer-plantuml
+          push: always
+          subFolder: src/plantuml
