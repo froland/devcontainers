@@ -1,11 +1,7 @@
 {
   "name": "Java_NodeJS",
   "build": {
-    "dockerfile": "Dockerfile",
-    "args": {
-      "VARIANT": "17",
-      "NODE_VERSION": "lts"                                                                                 }
-    }
+    "dockerfile": "Dockerfile"
   },
   "customizations": {
     "vscode": {

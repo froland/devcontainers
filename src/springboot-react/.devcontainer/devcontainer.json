@@ -1,0 +1,7 @@
+{
+  "name": "springboot_react",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "waitFor": "onCreateCommand"
+}
