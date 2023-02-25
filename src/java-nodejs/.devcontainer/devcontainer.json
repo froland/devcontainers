@@ -5,9 +5,7 @@
   },
   "customizations": {
     "vscode": {
-      "extensions": [
-        "humao.rest-client"
-      ],
+      "extensions": ["humao.rest-client"],
       "settings": {
         "emmet.includeLanguages": {
           "javascript": "javascriptreact"
@@ -19,11 +17,16 @@
         "[javascriptreact]": {
           "editor.defaultFormatter": "esbenp.prettier-vscode",
           "editor.formatOnSave": true
+        },
         "[typescript]": {
           "editor.defaultFormatter": "esbenp.prettier-vscode",
           "editor.formatOnSave": true
+        }
       }
     }
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {}
   },
   "waitFor": "onCreateCommand"
 }
