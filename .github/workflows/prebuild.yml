@@ -8,6 +8,10 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        image: ["java-nodejs", "springboot-react"]
+      fail-fast: false
     steps:
       - name: Checkout (GitHub)
         uses: actions/checkout@v3
@@ -16,29 +20,10 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-      - name: Extract metadata (tags, labels) for Docker
-        id: meta
-        uses: docker/metadata-action@v4
-        with:
-          images: |
-            froland/devcontainer-java-nodejs
-          tags: |
-            type=semver,pattern={{version}}
-            type=semver,pattern={{major}}.{{minor}}
-            type=semver,pattern={{major}}
-      - name: Prebuild java-nodejs dev container
+      - name: Prebuild ${{ matrix.image }} dev container
         uses: devcontainers/ci@v0.3
         with:
-          cacheFrom: froland/devcontainer-java-nodejs
-          imageName: froland/devcontainer-java-nodejs
-          imageTag: ${{ steps.meta.outputs.tags }}
+          cacheFrom: froland/devcontainer-${{ matrix.image }}
+          imageName: froland/devcontainer-${{ matrix.image }}
           push: always
-          subFolder: src/java-nodejs
-      # - name: Prebuild sprinboog-react dev container
-      #   uses: devcontainers/ci@v0.3
-      #   with:
-      #     cacheFrom: froland/devcontainer-springboot-react
-      #     imageName: froland/devcontainer-springboot-react
-      #     imageTag: ${{ steps.meta.outputs.tags }}
-      #     push: always
-      #     subFolder: src/springboot-react
+          subFolder: src/${{ matrix.image }}
