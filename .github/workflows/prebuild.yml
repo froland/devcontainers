@@ -20,6 +20,8 @@ jobs:
         id: meta
         uses: docker/metadata-action@v4
         with:
+          images: |
+            froland/devcontainer-java-nodejs
           tags: |
             type=semver,pattern={{version}}
             type=semver,pattern={{major}}.{{minor}}
@@ -32,11 +34,11 @@ jobs:
           imageTag: ${{ steps.meta.outputs.tags }}
           push: always
           subFolder: src/java-nodejs
-      - name: Prebuild sprinboog-react dev container
-        uses: devcontainers/ci@v0.3
-        with:
-          cacheFrom: froland/devcontainer-springboot-react
-          imageName: froland/devcontainer-springboot-react
-          imageTag: ${{ steps.meta.outputs.tags }}
-          push: always
-          subFolder: src/springboot-react
+      # - name: Prebuild sprinboog-react dev container
+      #   uses: devcontainers/ci@v0.3
+      #   with:
+      #     cacheFrom: froland/devcontainer-springboot-react
+      #     imageName: froland/devcontainer-springboot-react
+      #     imageTag: ${{ steps.meta.outputs.tags }}
+      #     push: always
+      #     subFolder: src/springboot-react
