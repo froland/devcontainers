@@ -6,12 +6,8 @@ on:
       - "v*"
 
 jobs:
-  build:
+  prebuild-java-nodejs:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        image: ["java-nodejs", "springboot-react"]
-      fail-fast: false
     steps:
       - name: Checkout (GitHub)
         uses: actions/checkout@v3
@@ -20,10 +16,28 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-      - name: Prebuild ${{ matrix.image }} dev container
+      - name: Prebuild java-nodejs dev container
         uses: devcontainers/ci@v0.3
         with:
-          cacheFrom: froland/devcontainer-${{ matrix.image }}
-          imageName: froland/devcontainer-${{ matrix.image }}
+          cacheFrom: froland/devcontainer-java-nodejs
+          imageName: froland/devcontainer-java-nodejs
           push: always
-          subFolder: src/${{ matrix.image }}
+          subFolder: src/java-nodejs
+  prebuild-springboot-react:
+    needs: prebuild-java-nodejs
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout (GitHub)
+        uses: actions/checkout@v3
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: Prebuild springboot-react dev container
+        uses: devcontainers/ci@v0.3
+        with:
+          cacheFrom: froland/devcontainer-springboot-react
+          imageName: froland/devcontainer-springboot-react
+          push: always
+          subFolder: src/springboot-react
