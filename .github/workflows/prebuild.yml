@@ -25,7 +25,7 @@ jobs:
           subFolder: src/java
   prebuild-java-nodejs:
     runs-on: ubuntu-latest
-    needs: preduild-java
+    needs: prebuild-java
     steps:
       - name: Checkout (GitHub)
         uses: actions/checkout@v3
@@ -42,7 +42,7 @@ jobs:
           push: always
           subFolder: src/java-nodejs
   prebuild-springboot-react:
-    needs: prebuild-java-nodejs
+    needs: [prebuild-java, prebuild-java-nodejs]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout (GitHub)
