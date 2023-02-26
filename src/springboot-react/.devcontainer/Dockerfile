@@ -9,7 +9,7 @@ RUN su vscode -c "umask 0002 \
 COPY pom.xml /tmp/springboot/pom.xml
 RUN su vscode -c "umask 0002 \
   && cd /tmp/springboot \
-  && mvn dependency:go-offline dependency:sources package clean \
+  && mvn --batch-mode dependency:go-offline dependency:sources package clean \
   && cd /tmp \
   && rm -rf springboot"
 RUN su vscode -c "umask 0002 \
