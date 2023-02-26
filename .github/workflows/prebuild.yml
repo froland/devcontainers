@@ -41,8 +41,7 @@ jobs:
           imageName: froland/devcontainer-java-nodejs
           push: always
           subFolder: src/java-nodejs
-  prebuild-springboot-react:
-    needs: [prebuild-java, prebuild-java-nodejs]
+  prebuild-latex:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout (GitHub)
@@ -52,13 +51,13 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-      - name: Prebuild springboot-react dev container
+      - name: Prebuild latex dev container
         uses: devcontainers/ci@v0.3
         with:
-          cacheFrom: froland/devcontainer-springboot-react
-          imageName: froland/devcontainer-springboot-react
+          cacheFrom: froland/devcontainer-latex
+          imageName: froland/devcontainer-latex
           push: always
-          subFolder: src/springboot-react
+          subFolder: src/latex
   prebuild-plantuml:
     runs-on: ubuntu-latest
     needs: prebuild-java
@@ -77,3 +76,21 @@ jobs:
           imageName: froland/devcontainer-plantuml
           push: always
           subFolder: src/plantuml
+  prebuild-springboot-react:
+    needs: [prebuild-java, prebuild-java-nodejs]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout (GitHub)
+        uses: actions/checkout@v3
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: Prebuild springboot-react dev container
+        uses: devcontainers/ci@v0.3
+        with:
+          cacheFrom: froland/devcontainer-springboot-react
+          imageName: froland/devcontainer-springboot-react
+          push: always
+          subFolder: src/springboot-react
