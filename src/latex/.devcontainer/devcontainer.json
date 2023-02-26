@@ -1,5 +1,5 @@
 {
-  "name": "java",
+  "name": "latex",
   "build": {
     "dockerfile": "Dockerfile"
   },
@@ -9,15 +9,11 @@
         "aaron-bond.better-comments",
         "adpyke.codesnap",
         "cs50.extension-uninstaller",
-        "dbaeumer.vscode-eslint",
         "editorconfig.editorconfig",
-        "esbenp.prettier-vscode",
         "GitHub.github-vscode-theme",
+        "James-Yu.latex-workshop",
         "ms-vsliveshare.vsliveshare",
-        "redhat.vscode-xml",
-        "shengchen.vscode-checkstyle",
         "visualstudioexptteam.vscodeintellicode",
-        "vscjava.vscode-java-pack",
         "vscode-icons-team.vscode-icons"
       ],
       "settings": {
@@ -48,22 +44,49 @@
         "git.autofetch": true,
         "git.confirmSync": false,
         "git.enableSmartCommit": true,
-        "java.checkstyle.configuration": "/google_checks.xml",
-        "java.compile.nullAnalysis.mode": "automatic",
-        "java.configuration.runtimes": [
+        "latex-workshop.intellisense.package.enabled": true,
+        "latex-workshop.latex.autoBuild.cleanAndRetry.enabled": false,
+        "latex-workshop.latex.autoBuild.run": "never",
+        "latex-workshop.latex.outDir": "%DIR%/out",
+        "latex-workshop.latex.recipe.default": "first",
+        "latex-workshop.latex.tools": [
           {
-            "name": "JavaSE-17",
-            "path": "/usr/lib/jvm/msopenjdk-current",
-            "default": true
+            "name": "latexmk",
+            "command": "latexmk",
+            "args": [
+              "-synctex=1",
+              "-silent",
+              "-lualatex",
+              "-interaction=nonstopmode",
+              "-file-line-error",
+              "-outdir=%OUTDIR%",
+              "--shell-escape",
+              "%DOC%"
+            ],
+            "env": {}
+          },
+          {
+            "name": "pdflatex",
+            "command": "pdflatex",
+            "args": [
+              "-synctex=1",
+              "-interaction=nonstopmode",
+              "-file-line-error",
+              "%DOC%"
+            ],
+            "env": {}
+          },
+          {
+            "name": "bibtex",
+            "command": "bibtex",
+            "args": ["%DOCFILE%"],
+            "env": {}
           }
         ],
-        "java.configuration.updateBuildConfiguration": "automatic",
-        "java.format.settings.url": "https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-java-google-style.xml",
-        "java.format.settings.profile": "GoogleStyle",
-        "java.inlayHints.parameterNames.enabled": "none",
-        "java.maven.downloadSources": true,
-        "redhat.telemetry.enabled": false,
-        "rest-client.enableTelemetry": false,
+        "latex-workshop.linting.chktex.enabled": true,
+        "latex-workshop.message.update.show": false,
+        "latex-workshop.synctex.afterBuild.enabled": false,
+        "latex-workshop.view.pdf.viewer": "tab",
         "telemetry.telemetryLevel": "off",
         "terminal.integrated.defaultProfile.linux": "zsh",
         "window.autoDetectColorScheme": true,
@@ -73,15 +96,8 @@
         "workbench.preferredLightColorTheme": "GitHub Light Default",
         "workbench.tips.enabled": false,
         "workbench.welcomePage.walkthroughs.openOnInstall": false,
-        "[java]": {
-          "editor.defaultFormatter": "redhat.java"
-        },
-        "[json]": {
-          "editor.defaultFormatter": "esbenp.prettier-vscode",
-          "editor.formatOnSave": true
-        },
-        "[xml]": {
-          "editor.defaultFormatter": "redhat.vscode-xml"
+        "[latex]": {
+          "editor.defaultFormatter": "James-Yu.latex-workshop"
         }
       }
     }
