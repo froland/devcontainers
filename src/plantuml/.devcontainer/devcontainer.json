@@ -7,7 +7,7 @@
     "vscode": {
       "extensions": ["jebbs.plantuml"],
       "settings": {
-        "plantuml.server": "http://localhost:8080/plantuml",
+        "plantuml.server": "http://localhost:9108/plantuml",
         "plantuml.render": "PlantUMLServer"
       }
     }
