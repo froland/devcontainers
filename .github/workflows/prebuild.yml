@@ -78,7 +78,6 @@ jobs:
           subFolder: src/latex
   prebuild-plantuml:
     runs-on: ubuntu-latest
-    needs: prebuild-java
     steps:
       - name: Checkout (GitHub)
         uses: actions/checkout@v3
