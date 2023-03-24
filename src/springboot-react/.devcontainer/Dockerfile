@@ -5,18 +5,15 @@ RUN su vscode -c "umask 0002 \
   && sdk flush archives \
   && sdk flush temp \
   && cd /tmp \
-  && spring init --artifact-id=sprinboot --build=maven --dependencies=data-jpa,devtools,h2,thymeleaf,web --group-id=be.eafcuccle --name=springboot springboot"
-COPY pom.xml /tmp/springboot/pom.xml
-RUN su vscode -c "umask 0002 \
-  && cd /tmp/springboot \
-  && mvn --batch-mode dependency:go-offline dependency:sources package"
-RUN su vscode -c "umask 0002 \
+  && spring init --artifact-id=sprinboot --build=maven --dependencies=data-jpa,devtools,h2,thymeleaf,web --group-id=be.eafcuccle --name=springboot springboot \
   && cd /tmp \
   && npm -y create vite@latest react -- --template react"
+COPY pom.xml /tmp/springboot/pom.xml
 COPY package.json /tmp/react/package.json
 RUN su vscode -c "umask 0002 \
+  && cd /tmp/springboot \
+  && mvn --batch-mode dependency:go-offline dependency:sources package \
   && cd /tmp/react \
-  && npm install"
-
-FROM froland/devcontainer-java-nodejs:latest AS container
-COPY --from=cache_builder /home/vscode/.m2 /home/vscode/.npm /home/vscode/
+  && npm install \
+  && cd /tmp \
+  && rm -rf springboot react"
