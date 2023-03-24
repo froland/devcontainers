@@ -1,4 +1,4 @@
-FROM froland/devcontainer-java-nodejs:latest
+FROM froland/devcontainer-java-nodejs:latest AS cache_builder
 RUN su vscode -c "umask 0002 \
   && . ${SDKMAN_DIR}/bin/sdkman-init.sh \
   && sdk install springboot \
@@ -9,15 +9,14 @@ RUN su vscode -c "umask 0002 \
 COPY pom.xml /tmp/springboot/pom.xml
 RUN su vscode -c "umask 0002 \
   && cd /tmp/springboot \
-  && mvn --batch-mode dependency:go-offline dependency:sources package clean \
-  && cd /tmp \
-  && rm -rf springboot"
+  && mvn --batch-mode dependency:go-offline dependency:sources package"
 RUN su vscode -c "umask 0002 \
   && cd /tmp \
   && npm -y create vite@latest react -- --template react"
 COPY package.json /tmp/react/package.json
 RUN su vscode -c "umask 0002 \
   && cd /tmp/react \
-  && npm install \
-  && cd /tmp \
-  && rm -rf react"
+  && npm install"
+
+FROM froland/devcontainer-java-nodejs:latest AS container
+COPY --from=cache_builder /home/vscode/.m2 /home/vscode/.npm /home/vscode/
