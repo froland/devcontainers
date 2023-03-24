@@ -8,7 +8,6 @@
       "extensions": [
         "aaron-bond.better-comments",
         "adpyke.codesnap",
-        "cs50.extension-uninstaller",
         "dbaeumer.vscode-eslint",
         "editorconfig.editorconfig",
         "esbenp.prettier-vscode",
@@ -34,12 +33,6 @@
         "eslint.format.enable": false,
         "eslint.validate": ["javascript"],
         "extensions.ignoreRecommendations": true,
-        "extension-uninstaller.uninstall": [
-          "github.copilot",
-          "github.copilot-nightly",
-          "ms-toolsai.jupyter",
-          "tabnine.tabnine-vscode"
-        ],
         "files.watcherExclude": {
           "**/.git/objects/**": true,
           "**/.git/subtree-cache/**": true,
