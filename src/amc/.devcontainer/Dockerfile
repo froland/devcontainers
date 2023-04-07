@@ -15,3 +15,4 @@ ENV DISPLAY :20
 COPY --chown=vscode:vscode .AMC.d /home/vscode/.AMC.d
 COPY --chown=vscode:vscode --chmod=0755 entrypoint.sh /home/vscode/entrypoint.sh
 ENTRYPOINT ["/home/vscode/entrypoint.sh"]
+CMD ["sleep", "infinity"]
