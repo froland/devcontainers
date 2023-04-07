@@ -17,6 +17,7 @@ RUN apt-get update \
     lxde \
     x11-xserver-utils \
     x11vnc \
+    xauth \
     xserver-xorg-video-dummy \
   && rm -rf /var/lib/apt/lists/*
 ADD xorg.conf /etc/X11/xorg.conf
