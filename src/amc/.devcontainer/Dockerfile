@@ -9,7 +9,7 @@ RUN apt-get update \
   libopenoffice-oodoc-perl \
   libreoffice-calc \
   x11vnc \
-  xvfb
+  xvfb \
   && rm -rf /var/lib/apt/lists/*
 ENV DISPLAY :20
 COPY --chown=vscode:vscode .AMC.d /home/vscode/.AMC.d
