@@ -21,11 +21,11 @@ RUN apt-get update \
     xserver-xorg-video-dummy \
   && rm -rf /var/lib/apt/lists/*
 ADD xorg.conf /etc/X11/xorg.conf
-USER vscode
 ADD --chown=vscode:vscode .AMC.d /home/vscode/.AMC.d
 ADD --chown=vscode:vscode --chmod=0755 entrypoint.sh /home/vscode/entrypoint.sh
 ADD noVNC-1.4.0.tar.gz /home/vscode/
 RUN chown -R vscode:vscode /home/vscode/noVNC-1.4.0
 EXPOSE 6900/tcp
+USER vscode
 ENTRYPOINT ["/home/vscode/entrypoint.sh"]
 CMD ["sleep", "infinity"]
