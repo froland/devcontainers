@@ -5,7 +5,7 @@ RUN su vscode -c "umask 0002 \
   && sdk flush archives \
   && sdk flush temp \
   && cd /tmp \
-  && spring init --artifact-id=sprinboot --build=maven --dependencies=data-jpa,data-rest,devtools,flyway,h2,lombok,testcontainers,thymeleaf,web --group-id=be.eafcuccle --name=springboot springboot \
+  && spring init --artifact-id=sprinboot --build=maven --dependencies=data-jpa,data-rest,devtools,flyway,h2,lombok,thymeleaf,web --group-id=be.eafcuccle --name=springboot springboot \
   && cd /tmp \
   && pnpm create vite react --template react"
 COPY pom.xml /tmp/springboot/pom.xml
