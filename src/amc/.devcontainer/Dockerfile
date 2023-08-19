@@ -9,14 +9,45 @@ ENV LC_ALL=$DOCKER_LANG.UTF-8
 RUN apt-get update \
   && export DEBIAN_FRONTEND=noninteractive \
   && apt-get -y install --no-install-recommends \
+    at-spi2-core \
     auto-multiple-choice \
+    ca-certificates\
+    curl \
+    dbus-x11 \
+    eterm \
+    fbautostart \
+    fluxbox \
+    fonts-noto \
+    fonts-wqy-microhei \
+    fonts-droid-fallback \
+    gnome-icon-theme \
+    gnome-keyring \
+    htop \
+    libasound2 \
+    libgbm-dev \
+    libnotify4 \
+    libnss3 \
     libopenoffice-oodoc-perl \
+    libsecret-1-dev \
     libreoffice-calc \
+    libx11-dev \
+    libxkbfile-dev \
+    libxss1 \
+    locales \
+    mousepad \
+    nano \
+    nautilus\
+    ncdu \
+    seahorse \
+    tigervnc-common \
+    tigervnc-standalone-server \
+    tigervnc-tools \
+    unzip \
+    x11-utils \
+    x11-xserver-utils \
+    xdg-utils \
+    xfonts-base \
+    xfonts-terminus \
+    xterm \
   && rm -rf /var/lib/apt/lists/*
 ADD --chown=vscode:vscode .AMC.d /home/vscode/.AMC.d
-ADD --chown=vscode:vscode entrypoint.sh /home/vscode/entrypoint.sh
-
-USER vscode
-RUN chmod +x /home/vscode/entrypoint.sh
-ENTRYPOINT ["/home/vscode/entrypoint.sh"]
-CMD ["sleep", "infinity"]
