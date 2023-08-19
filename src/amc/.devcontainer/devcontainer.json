@@ -2,20 +2,5 @@
   "name": "amc",
   "build": {
     "dockerfile": "Dockerfile"
-  },
-  "features": {
-    "ghcr.io/devcontainers/features/desktop-lite:1": {
-      "noVncVersion": "1.4.0"
-    }
-  },
-  "forwardPorts": [
-    6080
-  ],
-  "overrideCommand": false,
-  "portsAttributes": {
-    "6080": {
-      "label": "desktop",
-      "onAutoForward": "openBrowserOnce"
-    }
   }
 }
