@@ -14,7 +14,9 @@ RUN apt-get update \
     libreoffice-calc \
   && rm -rf /var/lib/apt/lists/*
 ADD --chown=vscode:vscode .AMC.d /home/vscode/.AMC.d
+ADD --chown=vscode:vscode entrypoint.sh /home/vscode/entrypoint.sh
 
 USER vscode
+RUN chmod +x /home/vscode/entrypoint.sh
 ENTRYPOINT ["/home/vscode/entrypoint.sh"]
 CMD ["sleep", "infinity"]
