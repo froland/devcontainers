@@ -1,4 +1,4 @@
-FROM froland/devcontainer-latex-desktop:latest
+FROM froland/devcontainer-latex:latest
 
 ARG DOCKER_LANG=en_US
 

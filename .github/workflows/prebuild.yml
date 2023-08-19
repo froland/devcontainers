@@ -7,7 +7,7 @@ on:
 
 jobs:
   prebuild-amc:
-    needs: prebuild-latex-desktop
+    needs: prebuild-latex
     runs-on: ubuntu-latest
     steps:
       - name: Checkout (GitHub)
@@ -76,24 +76,6 @@ jobs:
           imageName: froland/devcontainer-latex
           push: always
           subFolder: src/latex
-  prebuild-latex-desktop:
-    needs: prebuild-latex
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout (GitHub)
-        uses: actions/checkout@v3
-      - name: Login to GitHub Container Registry
-        uses: docker/login-action@v2
-        with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-      - name: Prebuild latex-desktop dev container
-        uses: devcontainers/ci@v0.3
-        with:
-          cacheFrom: froland/devcontainer-latex-desktop
-          imageName: froland/devcontainer-latex-desktop
-          push: always
-          subFolder: src/latex-desktop
   prebuild-plantuml:
     runs-on: ubuntu-latest
     steps:
