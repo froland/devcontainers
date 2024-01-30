@@ -14,6 +14,7 @@ RUN apt-get update \
     ca-certificates\
     curl \
     dbus-x11 \
+    default-jre \
     eterm \
     fbautostart \
     fluxbox \
@@ -30,6 +31,8 @@ RUN apt-get update \
     libopenoffice-oodoc-perl \
     libsecret-1-dev \
     libreoffice-calc \
+    libreoffice-gtk3 \
+    libreoffice-java-common \
     libx11-dev \
     libxkbfile-dev \
     libxss1 \
