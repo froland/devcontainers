@@ -1,7 +1,9 @@
 FROM mcr.microsoft.com/vscode/devcontainers/java:21
-RUN apt-get update \
-  && apt-get install -y --no-install-recommends fonts-noto-cjk graphviz \
-  && rm -rf /var/lib/apt/lists/*
+RUN --mount=type=cache,target=/var/cache/apt\
+  apt-get update \
+  && apt-get install -y --no-install-recommends \
+    fonts-noto-cjk \
+    graphviz
 WORKDIR /plantuml
 RUN wget https://github.com/plantuml/plantuml/releases/latest/download/plantuml.jar
 RUN chown -R vscode:vscode /plantuml
