@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/vscode/devcontainers/java:0-21
+FROM mcr.microsoft.com/vscode/devcontainers/java:21
 RUN apt-get update \
   && apt-get install -y --no-install-recommends fonts-noto-cjk graphviz \
   && rm -rf /var/lib/apt/lists/*
