@@ -6,7 +6,8 @@ ENV LANG=$DOCKER_LANG.UTF-8
 ENV LANGUAGE=$DOCKER_LANG:UTF-8
 ENV LC_ALL=$DOCKER_LANG.UTF-8
 
-RUN apt-get update \
+RUN --mount=type=cache,target=/var/cache/apt\
+  apt-get update \
   && export DEBIAN_FRONTEND=noninteractive \
   && apt-get -y install --no-install-recommends \
     at-spi2-core \
@@ -51,6 +52,5 @@ RUN apt-get update \
     xdg-utils \
     xfonts-base \
     xfonts-terminus \
-    xterm \
-  && rm -rf /var/lib/apt/lists/*
+    xterm*
 ADD --chown=vscode:vscode .AMC.d /home/vscode/.AMC.d
