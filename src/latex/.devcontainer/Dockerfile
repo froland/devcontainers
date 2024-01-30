@@ -1,7 +1,7 @@
 FROM mcr.microsoft.com/vscode/devcontainers/base:ubuntu
 
-RUN --mount=type=cache,target=/var/cache/apt\
-  apt-get update
+RUN --mount=type=cache,target=/var/cache/apt \
+  apt-get update \
   && export DEBIAN_FRONTEND=noninteractive \
   && apt-get -y install --no-install-recommends \
     biber \
