@@ -67,7 +67,7 @@ Regards.</df_subjectemail_email_text>
   <force_convert></force_convert>
   <html_browser>sensible-browser %u</html_browser>
   <ignore_red></ignore_red>
-  <img_viewer>code</img_viewer>
+  <img_viewer>eog</img_viewer>
   <imprimante></imprimante>
   <mailing_window_size></mailing_window_size>
   <manual_window_size>725x653+2911+374</manual_window_size>
@@ -89,7 +89,7 @@ Regards.</df_subjectemail_email_text>
     <repertoire>/tmp</repertoire>
     <sides>two-sided-long-edge</sides>
   </options_impression>
-  <pdf_viewer>code</pdf_viewer>
+  <pdf_viewer>evince</pdf_viewer>
   <preferences_window_size></preferences_window_size>
   <prepare_catalog></prepare_catalog>
   <prepare_indiv_solution></prepare_indiv_solution>
