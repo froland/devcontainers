@@ -17,6 +17,7 @@ RUN --mount=type=cache,target=/var/cache/apt\
     dbus-x11 \
     default-jre \
     eterm \
+    evince \
     fbautostart \
     fluxbox \
     fonts-noto \
