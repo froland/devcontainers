@@ -5,25 +5,24 @@ ARG DOCKER_LANG=en_US
 ENV LANG=$DOCKER_LANG.UTF-8
 ENV LANGUAGE=$DOCKER_LANG:UTF-8
 ENV LC_ALL=$DOCKER_LANG.UTF-8
+ENV TZ=Europe/Brussels
 
-RUN --mount=type=cache,target=/var/cache/apt\
-  apt-get update \
-  && export DEBIAN_FRONTEND=noninteractive \
-  && apt-get -y install --no-install-recommends \
+ADD --chown=vscode:vscode .AMC.d /home/vscode/.AMC.d
+
+# Install desktop packages
+RUN --mount=type=cache,target=/var/cache/apt apt-get update \
+  && DEBIAN_FRONTEND=noninteractive apt-get -y install --no-install-recommends \
     at-spi2-core \
-    auto-multiple-choice \
-    ca-certificates\
+    ca-certificates \
     curl \
     dbus-x11 \
-    default-jre \
-    eog \
     eterm \
-    evince \
     fbautostart \
-    fluxbox \
-    fonts-noto \
-    fonts-wqy-microhei \
     fonts-droid-fallback \
+    fonts-noto \
+    fonts-noto-color-emoji \
+    fonts-wqy-microhei \
+    fluxbox \
     gnome-icon-theme \
     gnome-keyring \
     htop \
@@ -31,11 +30,7 @@ RUN --mount=type=cache,target=/var/cache/apt\
     libgbm-dev \
     libnotify4 \
     libnss3 \
-    libopenoffice-oodoc-perl \
     libsecret-1-dev \
-    libreoffice-calc \
-    libreoffice-gtk3 \
-    libreoffice-java-common \
     libx11-dev \
     libxkbfile-dev \
     libxss1 \
@@ -48,11 +43,25 @@ RUN --mount=type=cache,target=/var/cache/apt\
     tigervnc-common \
     tigervnc-standalone-server \
     tigervnc-tools \
+    tilix \
     unzip \
     x11-utils \
     x11-xserver-utils \
     xdg-utils \
     xfonts-base \
     xfonts-terminus \
-    xterm*
-ADD --chown=vscode:vscode .AMC.d /home/vscode/.AMC.d
+    xterm
+
+# Install utilities
+RUN --mount=type=cache,target=/var/cache/apt DEBIAN_FRONTEND=noninteractive apt-get -y install --no-install-recommends \
+    default-jre \
+    eog \
+    evince \
+    libopenoffice-oodoc-perl \
+    libreoffice-calc \
+    libreoffice-gtk3 \
+    libreoffice-java-common
+
+# Install auto-multiple-choice
+RUN --mount=type=cache,target=/var/cache/apt DEBIAN_FRONTEND=noninteractive apt-get -y install --no-install-recommends \
+    auto-multiple-choice
