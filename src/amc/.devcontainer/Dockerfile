@@ -16,6 +16,7 @@ RUN --mount=type=cache,target=/var/cache/apt\
     curl \
     dbus-x11 \
     default-jre \
+    eog \
     eterm \
     evince \
     fbautostart \
