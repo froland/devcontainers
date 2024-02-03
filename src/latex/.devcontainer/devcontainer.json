@@ -8,7 +8,6 @@
       "extensions": [
         "aaron-bond.better-comments",
         "adpyke.codesnap",
-        "cs50.extension-uninstaller",
         "editorconfig.editorconfig",
         "GitHub.github-vscode-theme",
         "James-Yu.latex-workshop",
@@ -30,12 +29,6 @@
         "eslint.format.enable": false,
         "eslint.validate": ["javascript"],
         "extensions.ignoreRecommendations": true,
-        "extension-uninstaller.uninstall": [
-          "github.copilot",
-          "github.copilot-nightly",
-          "ms-toolsai.jupyter",
-          "tabnine.tabnine-vscode"
-        ],
         "files.watcherExclude": {
           "**/.git/objects/**": true,
           "**/.git/subtree-cache/**": true,
@@ -56,7 +49,7 @@
             "args": [
               "-synctex=1",
               "-silent",
-              "-lualatex",
+              "-xelatex",
               "-interaction=nonstopmode",
               "-file-line-error",
               "-outdir=%OUTDIR%",
