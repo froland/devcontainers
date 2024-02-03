@@ -10,6 +10,7 @@ RUN --mount=type=cache,target=/var/cache/apt \
     latexmk \
     libyaml-tiny-perl \
     libfile-homedir-perl \
+    libpango-perl \
     texlive \
     texlive-bibtex-extra \
     texlive-extra-utils \
@@ -20,5 +21,6 @@ RUN --mount=type=cache,target=/var/cache/apt \
     texlive-luatex \
     texlive-pstricks \
     texlive-publishers \
-    texlive-science
+    texlive-science \
+    texlive-xetex
 ENTRYPOINT ["/usr/bin/zsh"]
