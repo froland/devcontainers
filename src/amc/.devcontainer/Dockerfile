@@ -26,7 +26,7 @@ RUN --mount=type=cache,target=/var/cache/apt apt-get update \
     gnome-icon-theme \
     gnome-keyring \
     htop \
-    libasound2 \
+    libasound2-dev \
     libgbm-dev \
     libnotify4 \
     libnss3 \
