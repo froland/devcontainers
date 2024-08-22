@@ -17,6 +17,7 @@ RUN --mount=type=cache,target=/var/cache/apt DEBIAN_FRONTEND=noninteractive apt-
     texlive \
     texlive-bibtex-extra \
     texlive-extra-utils \
+    texlive-font-utils \
     texlive-fonts-extra \
     texlive-fonts-extra-links \
     texlive-lang-french \
