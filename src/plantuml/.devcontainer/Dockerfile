@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/vscode/devcontainers/java-bookworm:21
+FROM mcr.microsoft.com/vscode/devcontainers/java:21-jdk-bookworm
 RUN --mount=type=cache,target=/var/cache/apt\
   apt-get update \
   && apt-get install -y --no-install-recommends \
