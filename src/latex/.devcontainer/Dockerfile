@@ -10,7 +10,8 @@ RUN --mount=type=cache,target=/var/cache/apt \
     latexmk \
     libyaml-tiny-perl \
     libfile-homedir-perl \
-    libpango-perl
+    libpango-perl \
+    python3-pygments
 
 # Install texlive packages
 RUN --mount=type=cache,target=/var/cache/apt DEBIAN_FRONTEND=noninteractive apt-get -y install --no-install-recommends \
