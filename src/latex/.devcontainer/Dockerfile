@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/vscode/devcontainers/base:ubuntu-24.04
+FROM mcr.microsoft.com/vscode/devcontainers/base:ubuntu-22.04
 
 # Install dependencies
 RUN --mount=type=cache,target=/var/cache/apt \
