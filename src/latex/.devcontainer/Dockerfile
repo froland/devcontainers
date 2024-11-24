@@ -6,11 +6,21 @@ RUN --mount=type=cache,target=/var/cache/apt \
   && DEBIAN_FRONTEND=noninteractive apt-get -y install --no-install-recommends \
     biber \
     chktex \
+    gir1.2-gtk-3.0 \
+    gir1.2-poppler-0.18 \
+    gobject-introspection \
     graphicsmagick \
     latexmk \
-    libyaml-tiny-perl \
+    libcairo2 \
     libfile-homedir-perl \
+    libgirepository-1.0-1 \
+    libgtk-3-0 \
+    libpoppler-glib8 \
     libpango-perl \
+    libyaml-tiny-perl \
+    pympress \
+    python3-gi \
+    python3-gi-cairo \
     python3-pygments
 
 # Install texlive packages
