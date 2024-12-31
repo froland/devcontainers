@@ -67,4 +67,4 @@ RUN --mount=type=cache,target=/var/cache/apt DEBIAN_FRONTEND=noninteractive apt-
     auto-multiple-choice
 
 # Reinitialize font db
-RUN mkluatexfontdb
+RUN luatex -draftmode -interaction=nonstopmode '\\relax'
