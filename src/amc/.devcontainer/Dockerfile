@@ -63,5 +63,5 @@ RUN apt-get update \
 
 # Reinitialize font db
 COPY dummy.tex /tmp/dummy.tex
-RUN luatex -interaction=nonstopmode /tmp/dummy.tex
+RUN lualatex -interaction=nonstopmode /tmp/dummy.tex
 
