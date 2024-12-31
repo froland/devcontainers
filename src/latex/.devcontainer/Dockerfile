@@ -39,6 +39,6 @@ RUN --mount=type=cache,target=/var/cache/apt DEBIAN_FRONTEND=noninteractive apt-
     texlive-xetex
 
 # Initialize font db
-RUN luatex -draftmode -interaction=nonstopmode '\\relax'
+RUN luatex -draftmode -interaction=nonstopmode '\relax'
 
 ENTRYPOINT ["/usr/bin/zsh"]
