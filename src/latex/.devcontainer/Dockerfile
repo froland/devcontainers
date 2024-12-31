@@ -36,6 +36,7 @@ RUN apt-get update \
   && rm -rf /var/lib/apt/lists/*
 
 # Initialize font db
-RUN echo '\documentclass{article}\begin{document}Hello, world!\end{document}' | luatex -interaction=nonstopmode -
+COPY dummy.tex /tmp/dummy.tex
+RUN luatex -interaction=nonstopmode /tmp/dummy.tex
 
 ENTRYPOINT ["/usr/bin/zsh"]
