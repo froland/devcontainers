@@ -36,6 +36,6 @@ RUN apt-get update \
   && rm -rf /var/lib/apt/lists/*
 
 # Initialize font db
-RUN su vscode -c "lualatex -draftmode -interaction=nonstopmode '\documentclass{article}\begin{document}Hello, world!\end{document}'"
+RUN su vscode -c "lualatex --draftmode --interaction=nonstopmode --output-directory=/tmp '\documentclass{article}\begin{document}Hello, world!\end{document}'"
 
 ENTRYPOINT ["/usr/bin/zsh"]
