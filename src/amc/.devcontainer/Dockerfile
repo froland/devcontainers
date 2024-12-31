@@ -65,3 +65,6 @@ RUN --mount=type=cache,target=/var/cache/apt DEBIAN_FRONTEND=noninteractive apt-
 # Install auto-multiple-choice
 RUN --mount=type=cache,target=/var/cache/apt DEBIAN_FRONTEND=noninteractive apt-get -y install --no-install-recommends \
     auto-multiple-choice
+
+# Reinitialize font db
+RUN mkluatexfontdb

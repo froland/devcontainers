@@ -38,4 +38,7 @@ RUN --mount=type=cache,target=/var/cache/apt DEBIAN_FRONTEND=noninteractive apt-
     texlive-science \
     texlive-xetex
 
+# Initialize font db
+RUN mkluatexfontdb
+
 ENTRYPOINT ["/usr/bin/zsh"]
