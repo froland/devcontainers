@@ -10,13 +10,17 @@ ENV TZ=Europe/Brussels
 ADD --chown=vscode:vscode .AMC.d /home/vscode/.AMC.d
 
 # Install desktop packages
-RUN --mount=type=cache,target=/var/cache/apt apt-get update \
+RUN apt-get update \
   && DEBIAN_FRONTEND=noninteractive apt-get -y install --no-install-recommends \
     at-spi2-core \
+    auto-multiple-choice \
     ca-certificates \
     curl \
     dbus-x11 \
+    default-jre \
+    eog \
     eterm \
+    evince \
     fbautostart \
     fonts-droid-fallback \
     fonts-noto \
@@ -30,6 +34,10 @@ RUN --mount=type=cache,target=/var/cache/apt apt-get update \
     libgbm-dev \
     libnotify4 \
     libnss3 \
+    libopenoffice-oodoc-perl \
+    libreoffice-calc \
+    libreoffice-gtk3 \
+    libreoffice-java-common \
     libsecret-1-dev \
     libx11-dev \
     libxkbfile-dev \
@@ -50,21 +58,9 @@ RUN --mount=type=cache,target=/var/cache/apt apt-get update \
     xdg-utils \
     xfonts-base \
     xfonts-terminus \
-    xterm
-
-# Install utilities
-RUN --mount=type=cache,target=/var/cache/apt DEBIAN_FRONTEND=noninteractive apt-get -y install --no-install-recommends \
-    default-jre \
-    eog \
-    evince \
-    libopenoffice-oodoc-perl \
-    libreoffice-calc \
-    libreoffice-gtk3 \
-    libreoffice-java-common
-
-# Install auto-multiple-choice
-RUN --mount=type=cache,target=/var/cache/apt DEBIAN_FRONTEND=noninteractive apt-get -y install --no-install-recommends \
-    auto-multiple-choice
+    xterm \
+  && rm -rf /var/lib/apt/lists/*
 
 # Reinitialize font db
-RUN luatex -draftmode -interaction=nonstopmode '\relax'
+RUN echo '\documentclass{article}\begin{document}Hello, world!\end{document}' | luatex -interaction=nonstopmode -
+

@@ -1,8 +1,7 @@
 FROM mcr.microsoft.com/vscode/devcontainers/base:ubuntu-24.04
 
 # Install dependencies
-RUN --mount=type=cache,target=/var/cache/apt \
-  apt-get update \
+RUN apt-get update \
   && DEBIAN_FRONTEND=noninteractive apt-get -y install --no-install-recommends \
     biber \
     chktex \
@@ -21,10 +20,7 @@ RUN --mount=type=cache,target=/var/cache/apt \
     pympress \
     python3-gi \
     python3-gi-cairo \
-    python3-pygments
-
-# Install texlive packages
-RUN --mount=type=cache,target=/var/cache/apt DEBIAN_FRONTEND=noninteractive apt-get -y install --no-install-recommends \
+    python3-pygments \
     texlive \
     texlive-bibtex-extra \
     texlive-extra-utils \
@@ -36,9 +32,10 @@ RUN --mount=type=cache,target=/var/cache/apt DEBIAN_FRONTEND=noninteractive apt-
     texlive-pstricks \
     texlive-publishers \
     texlive-science \
-    texlive-xetex
+    texlive-xetex \
+  && rm -rf /var/lib/apt/lists/*
 
 # Initialize font db
-RUN luatex -draftmode -interaction=nonstopmode '\relax'
+RUN echo '\documentclass{article}\begin{document}Hello, world!\end{document}' | luatex -interaction=nonstopmode -
 
 ENTRYPOINT ["/usr/bin/zsh"]
