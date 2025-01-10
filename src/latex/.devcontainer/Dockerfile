@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/vscode/devcontainers/base:ubuntu-24.04
+FROM froland/devcontainer-base
 
 # Install dependencies
 RUN apt-get update \
