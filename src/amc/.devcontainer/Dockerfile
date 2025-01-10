@@ -31,6 +31,9 @@ RUN apt-get update \
     gnome-keyring \
     htop \
     libasound2-dev \
+    libemail-address-perl \
+    libemail-mime-perl \
+    libemail-sender-perl \
     libgbm-dev \
     libnotify4 \
     libnss3 \
