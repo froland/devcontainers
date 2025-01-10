@@ -60,6 +60,7 @@ jobs:
           push: always
           subFolder: src/java-nodejs
   prebuild-latex:
+    needs: prebuild-base
     runs-on: ubuntu-latest
     steps:
       - name: Checkout (GitHub)
