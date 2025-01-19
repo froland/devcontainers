@@ -91,7 +91,7 @@ Regards.</df_subjectemail_email_text>
   </options_impression>
   <pdf_viewer>evince</pdf_viewer>
   <preferences_window_size></preferences_window_size>
-  <prepare_catalog></prepare_catalog>
+  <prepare_catalog>1</prepare_catalog>
   <prepare_indiv_solution></prepare_indiv_solution>
   <prepare_solution></prepare_solution>
   <print_command_pdf>cupsdoprint %f</print_command_pdf>
