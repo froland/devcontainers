@@ -9,6 +9,7 @@ RUN apt-get update \
     gir1.2-poppler-0.18 \
     gobject-introspection \
     graphicsmagick \
+    imagemagick \
     inkscape \
     latexmk \
     libcairo2 \
