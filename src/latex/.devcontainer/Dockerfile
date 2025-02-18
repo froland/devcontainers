@@ -23,6 +23,7 @@ RUN apt-get update \
     python3-gi \
     python3-gi-cairo \
     python3-pygments \
+    python3-venv \
     texlive \
     texlive-bibtex-extra \
     texlive-extra-utils \
