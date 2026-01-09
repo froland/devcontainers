@@ -103,8 +103,10 @@
 \setdefaultgroupmode{withoutreplacement} % Mode de sélection des questions
 
 % --- Formatage des questions ---
-\renewcommand{\AMCbeginQuestion}[2]{\noindent\makebox[2em][l]{\textbf{#1.} #2}}
-\renewcommand{\AMCformQuestion}[1]{\makebox[2em][l]{\textbf{#1.}}}
+\newlength{\hehamc@questionnumberlength}
+\settowidth{\hehamc@questionnumberlength}{99. }
+\renewcommand{\AMCbeginQuestion}[2]{\noindent\makebox[\hehamc@questionnumberlength][l]{\textbf{#1.}}}
+\renewcommand{\AMCformQuestion}[1]{\makebox[\hehamc@questionnumberlength][r]{\textbf{#1.}}}
 
 % --- Commandes personnalisées ---
 
@@ -266,6 +268,6 @@
   \end{multicols}
 } % Fin de la commande \AnswerSheet
 
-\newcommand{\DraftPage}{\clearpage{}\section*{Feuille de brouillon}\clearpage{}} % Draft page
-\newcommand{\FillIn}{\makebox[7em]{\hrulefill{}}} % Fill-in blank
+\newcommand{\DraftPage}{\clearpage{}\section*{Feuille de brouillon}\clearpage{}} % Crée une page de brouillon
+\newcommand{\FillIn}{\makebox[6em]{\hrulefill{}}} % Commande pour les espaces à remplir
 
