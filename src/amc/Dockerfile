@@ -65,10 +65,10 @@ RUN apt-get update \
 USER vscode
 
 # Install custom fonts and class files
-ADD .AMC.d /home/vscode/.AMC.d
-ADD heh-amc /home/vscode/texmf/tex/latex/heh-amc
-ADD IntoneMonoNerdFont-latex /home/vscode/texmf/tex/latex/IntoneMonoNerdFont
-ADD IntoneMonoNerdFont-truetype /home/vscode/texmf/fonts/truetype/public/IntoneMonoNerdFont
-ADD luciole-latex /home/vscode/texmf/tex/latex/luciole
-ADD luciole-opentype /home/vscode/texmf/fonts/opentype/public/luciole
-ADD luciole-truetype /home/vscode/texmf/fonts/truetype/public/luciole
+ADD --chown=vscode:vscode .AMC.d /home/vscode/.AMC.d
+ADD --chown=vscode:vscode heh-amc /home/vscode/texmf/tex/latex/heh-amc
+ADD --chown=vscode:vscode IntoneMonoNerdFont-latex /home/vscode/texmf/tex/latex/IntoneMonoNerdFont
+ADD --chown=vscode:vscode IntoneMonoNerdFont-truetype /home/vscode/texmf/fonts/truetype/public/IntoneMonoNerdFont
+ADD --chown=vscode:vscode luciole-latex /home/vscode/texmf/tex/latex/luciole
+ADD --chown=vscode:vscode luciole-opentype /home/vscode/texmf/fonts/opentype/public/luciole
+ADD --chown=vscode:vscode luciole-truetype /home/vscode/texmf/fonts/truetype/public/luciole
