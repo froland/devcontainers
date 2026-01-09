@@ -66,7 +66,6 @@ USER vscode
 
 # Install custom fonts and class files
 ADD .AMC.d /home/vscode/.AMC.d
-RUN sh -c "mkdir -p /home/vscode/texmf/tex/latex; mkdir -p /home/vscode/texmf/fonts/{truetype,opentype}/public"
 ADD heh-amc /home/vscode/texmf/tex/latex/heh-amc
 ADD IntoneMonoNerdFont-latex /home/vscode/texmf/tex/latex/IntoneMonoNerdFont
 ADD IntoneMonoNerdFont-truetype /home/vscode/texmf/fonts/truetype/public/IntoneMonoNerdFont
