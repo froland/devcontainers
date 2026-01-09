@@ -102,6 +102,10 @@
 \AMCsetScoreZoneAnswerSheet{position=margins} % Position de la zone de score
 \setdefaultgroupmode{withoutreplacement} % Mode de sélection des questions
 
+% --- Formatage des questions ---
+\renewcommand{\AMCbeginQuestion}[2]{\noindent\makebox[2em][l]{\textbf{#1.} #2}}
+\renewcommand{\AMCformQuestion}[1]{\makebox[2em][l]{\textbf{#1.}}}
+
 % --- Commandes personnalisées ---
 
 \newcommand{\hehamc@examtitle}{}
@@ -263,5 +267,5 @@
 } % Fin de la commande \AnswerSheet
 
 \newcommand{\DraftPage}{\clearpage{}\section*{Feuille de brouillon}\clearpage{}} % Draft page
-\newcommand{\FillIn}{\makebox[3cm]{\hrulefill{}}} % Fill-in blank
+\newcommand{\FillIn}{\makebox[7em]{\hrulefill{}}} % Fill-in blank
 
