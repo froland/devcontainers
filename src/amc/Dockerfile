@@ -73,6 +73,3 @@ ADD IntoneMonoNerdFont-truetype /home/vscode/texmf/fonts/truetype/public/IntoneM
 ADD luciole-latex /home/vscode/texmf/tex/latex/luciole
 ADD luciole-opentype /home/vscode/texmf/fonts/opentype/public/luciole
 ADD luciole-truetype /home/vscode/texmf/fonts/truetype/public/luciole
-
-# Initialize font db
-RUN sh -c "lualatex --draftmode --interaction=nonstopmode --output-directory=/tmp '\documentclass{article}\begin{document}Hello, world!\end{document}'"
