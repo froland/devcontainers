@@ -11,16 +11,16 @@
 % Le package requiert LuaLaTeX pour fontspec et les polices OpenType
 \RequirePackage{ifluatex}
 \ifluatex\else
-  \ClassError{heh-amc}{%
-    Ce package nécessite LuaLaTeX.%
-  }{%
-    Vous utilisez un moteur LaTeX incompatible.^^J%
-    Veuillez compiler votre document avec LuaLaTeX~:^^J%
-    ^^J%
-    \space\space lualatex votre-fichier.tex^^J%
-    ^^J%
-    Les moteurs pdfLaTeX et XeLaTeX ne sont pas supportés.%
-  }
+    \ClassError{heh-amc}{%
+        Ce package nécessite LuaLaTeX.%
+    }{%
+        Vous utilisez un moteur LaTeX incompatible.^^J%
+        Veuillez compiler votre document avec LuaLaTeX~:^^J%
+        ^^J%
+        \space\space lualatex votre-fichier.tex^^J%
+        ^^J%
+        Les moteurs pdfLaTeX et XeLaTeX ne sont pas supportés.%
+    }
 \fi
 
 % --- Options du package ---
@@ -34,7 +34,7 @@
 
 % Avertissement pour options inconnues
 \DeclareOption*{%
-  \ClassWarning{heh-amc}{Option inconnue~: '\CurrentOption'}%
+    \ClassWarning{heh-amc}{Option inconnue~: '\CurrentOption'}%
 }
 
 % Traitement des options
@@ -73,8 +73,8 @@
 
 % --- Configuration des unités SI ---
 \sisetup{
-  locale=FR,                     % Locale française (séparateur décimal virgule)
-  per-mode=fraction              % Utiliser des fractions pour les unités
+    locale=FR,                     % Locale française (séparateur décimal virgule)
+    per-mode=fraction              % Utiliser des fractions pour les unités
 }
 
 % --- Formatage du texte ---
@@ -87,10 +87,10 @@
 
 % Ajout conditionnel des options
 \ifhehamc@catalog
-  \edef\hehamc@amcoptions{\hehamc@amcoptions,catalog}
+    \edef\hehamc@amcoptions{\hehamc@amcoptions,catalog}
 \fi
 \ifhehamc@noshuffle
-  \edef\hehamc@amcoptions{\hehamc@amcoptions,noshuffle,noshufflegroups}
+    \edef\hehamc@amcoptions{\hehamc@amcoptions,noshuffle,noshufflegroups}
 \fi
 
 % Chargement du package AMC avec les options construites
@@ -107,9 +107,9 @@
 \settowidth{\hehamc@questionnumberlength}{\textbf{99. }}
 \renewcommand{\AMCformQuestion}[1]{\makebox[\hehamc@questionnumberlength][r]{\textbf{#1.}}}
 \ifhehamc@catalog
-  \renewcommand{\AMCbeginQuestion}[2]{\noindent\textbf{#1}}
+    \renewcommand{\AMCbeginQuestion}[2]{\noindent\textbf{#1}}
 \else
-  \renewcommand{\AMCbeginQuestion}[2]{\noindent\makebox[\hehamc@questionnumberlength][l]{\textbf{#1.}}}
+    \renewcommand{\AMCbeginQuestion}[2]{\noindent\makebox[\hehamc@questionnumberlength][l]{\textbf{#1.}}}
 \fi
 
 % --- Commandes personnalisées ---
@@ -136,140 +136,140 @@
 \newfontfamily\robotofont{Roboto}
 
 \newcommand{\HEHLogo}{%
-  \begin{tikzpicture}
+    \begin{tikzpicture}
 
-    % HEH
-    \fill[hehamc@red1] (0,0) |- ++(.23,1.14) |- ++(.46,-.46) |- ++(.23,.46) |- ++(-.23,-1.14) |- ++(-.46,.46) -- ++(0,-.46) -- cycle;
-    \begin{scope}[fill=hehamc@red2]
-      \clip (3.66,.23) circle[radius=2.97];
-      \fill (0,0) |- ++(.23,1.14) |- ++(.46,-.46) |- ++(.23,.46) |- ++(-.23,-1.14) |- ++(-.46,.46) -- ++(0,-.46) -- cycle;
-      \fill (1.14,0) rectangle ++(.91,.23);
-      \fill (1.14,.46) rectangle ++(.69,.23);
-      \fill (1.14,.91) rectangle ++(.91,.23);
-    \end{scope}
-    \begin{scope}[fill=hehamc@red3]
-      \clip (3.66,.23) circle[radius=2.06];
-      \fill (1.14,0) rectangle ++(.91,.23);
-      \fill (1.14,.46) rectangle ++(.69,.23);
-      \fill (1.14,.91) rectangle ++(.91,.23);
-      \fill (2.29,0) |- ++(.23,1.14) |- ++(.46,-.46) |- ++(.23,.46) |- ++(-.23,-1.14) |- ++(-.46,.46) -- ++(0,-.46) -- cycle;
-    \end{scope}
-    \begin{scope}[fill=hehamc@red4]
-      \clip (3.66,.23) circle[radius=1.26];
-      \fill (2.29,0) |- ++(.23,1.14) |- ++(.46,-.46) |- ++(.23,.46) |- ++(-.23,-1.14) |- ++(-.46,.46) -- ++(0,-.46) -- cycle;
-    \end{scope}
+        % HEH
+        \fill[hehamc@red1] (0,0) |- ++(.23,1.14) |- ++(.46,-.46) |- ++(.23,.46) |- ++(-.23,-1.14) |- ++(-.46,.46) -- ++(0,-.46) -- cycle;
+        \begin{scope}[fill=hehamc@red2]
+            \clip (3.66,.23) circle[radius=2.97];
+            \fill (0,0) |- ++(.23,1.14) |- ++(.46,-.46) |- ++(.23,.46) |- ++(-.23,-1.14) |- ++(-.46,.46) -- ++(0,-.46) -- cycle;
+            \fill (1.14,0) rectangle ++(.91,.23);
+            \fill (1.14,.46) rectangle ++(.69,.23);
+            \fill (1.14,.91) rectangle ++(.91,.23);
+        \end{scope}
+        \begin{scope}[fill=hehamc@red3]
+            \clip (3.66,.23) circle[radius=2.06];
+            \fill (1.14,0) rectangle ++(.91,.23);
+            \fill (1.14,.46) rectangle ++(.69,.23);
+            \fill (1.14,.91) rectangle ++(.91,.23);
+            \fill (2.29,0) |- ++(.23,1.14) |- ++(.46,-.46) |- ++(.23,.46) |- ++(-.23,-1.14) |- ++(-.46,.46) -- ++(0,-.46) -- cycle;
+        \end{scope}
+        \begin{scope}[fill=hehamc@red4]
+            \clip (3.66,.23) circle[radius=1.26];
+            \fill (2.29,0) |- ++(.23,1.14) |- ++(.46,-.46) |- ++(.23,.46) |- ++(-.23,-1.14) |- ++(-.46,.46) -- ++(0,-.46) -- cycle;
+        \end{scope}
 
-    % be
-    \fill[hehamc@dark] (3.43,.46) rectangle ++(.07,.69);
-    \fill[hehamc@dark] (3.66,.69) circle[radius=.23];
-    \fill[white] (3.66,.69) circle[radius=.16];
-    \fill[white] (3.51,.54) circle[radius=.17];
-    \fill[hehamc@red5] (3.51,.54) circle[radius=.09];
-    \fill[hehamc@dark] (4.43,.69) arc[radius=.23,start angle=0,end angle=315] -- (4.2,.69) -- cycle;
-    \fill[white] (4.2,.69) circle[radius=.16];
-    \begin{scope}[fill=hehamc@dark]
-      \clip (4.2,.69) circle[radius=.23];
-      \fill (3.97,.65) rectangle ++(.46,.07);
-    \end{scope}
+        % be
+        \fill[hehamc@dark] (3.43,.46) rectangle ++(.07,.69);
+        \fill[hehamc@dark] (3.66,.69) circle[radius=.23];
+        \fill[white] (3.66,.69) circle[radius=.16];
+        \fill[white] (3.51,.54) circle[radius=.17];
+        \fill[hehamc@red5] (3.51,.54) circle[radius=.09];
+        \fill[hehamc@dark] (4.43,.69) arc[radius=.23,start angle=0,end angle=315] -- (4.2,.69) -- cycle;
+        \fill[white] (4.2,.69) circle[radius=.16];
+        \begin{scope}[fill=hehamc@dark]
+            \clip (4.2,.69) circle[radius=.23];
+            \fill (3.97,.65) rectangle ++(.46,.07);
+        \end{scope}
 
-    % Département des Sciences et Technologies
-    \node[anchor=base west,inner sep=0pt,node font=\robotofont,text=hehamc@dark] at (3.43,0) {Sciences};
-    \node[anchor=base west,inner sep=0pt,node font=\robotofont,text=hehamc@dark] (techno) at (3.43,-.36) {et technologies};
+        % Département des Sciences et Technologies
+        \node[anchor=base west,inner sep=0pt,node font=\robotofont,text=hehamc@dark] at (3.43,0) {Sciences};
+        \node[anchor=base west,inner sep=0pt,node font=\robotofont,text=hehamc@dark] (techno) at (3.43,-.36) {et technologies};
 
-    \pgfresetboundingbox
-    \useasboundingbox (0,1.14) rectangle (techno.south east);
-  \end{tikzpicture}
+        \pgfresetboundingbox
+        \useasboundingbox (0,1.14) rectangle (techno.south east);
+    \end{tikzpicture}
 }
 
 \newcommand{\Instructions}{%
-  \begin{itemize}[itemsep=0.5em]
-    \item \textbf{Durée maximale~:}
-          \begin{itemize}[noitemsep]
-            \item \hehamc@duration{}.
-            \item \hehamc@durationextra{} si tiers temps inclus dans le PAI. % chktex 13
-          \end{itemize}
-    \item \textbf{Notation~:}
-          \begin{itemize}[noitemsep]
-            \item Chaque réponse correcte = \textbf{1~point}.
-            \item Pas de point négatif pour les erreurs.
-          \end{itemize}
-    \item \textbf{Format des questions~:}
-          \begin{itemize}[noitemsep]
-            \item 4 propositions spécifiques et 2 propositions générales.
-            \item Une seule réponse correcte par question.
-          \end{itemize}
-    \item \textbf{Propositions générales~:}
-          \begin{itemize}[noitemsep]
-            \item \textbf{aucune} = aucune proposition spécifique n'est correcte.
-            \item \textbf{toutes} = toutes les propositions spécifiques sont correctes.
-          \end{itemize}
-    \item \textbf{Remise~:}
-          \begin{itemize}[noitemsep]
-            \item Remettez toutes les feuilles de l'examen.
-            \item Seule la feuille de réponse sera corrigée.
-            \item Utilisez les feuilles de question comme brouillon.
-          \end{itemize}
-  \end{itemize}
+    \begin{itemize}[itemsep=0.5em]
+        \item \textbf{Durée maximale~:}
+              \begin{itemize}[noitemsep]
+                  \item \hehamc@duration{}.
+                  \item \hehamc@durationextra{} si tiers temps inclus dans le PAI. % chktex 13
+              \end{itemize}
+        \item \textbf{Notation~:}
+              \begin{itemize}[noitemsep]
+                  \item Chaque réponse correcte = \textbf{1~point}.
+                  \item Pas de point négatif pour les erreurs.
+              \end{itemize}
+        \item \textbf{Format des questions~:}
+              \begin{itemize}[noitemsep]
+                  \item 4 propositions spécifiques et 2 propositions générales.
+                  \item Une seule réponse correcte par question.
+              \end{itemize}
+        \item \textbf{Propositions générales~:}
+              \begin{itemize}[noitemsep]
+                  \item \textbf{aucune} = aucune proposition spécifique n'est correcte.
+                  \item \textbf{toutes} = toutes les propositions spécifiques sont correctes.
+              \end{itemize}
+        \item \textbf{Remise~:}
+              \begin{itemize}[noitemsep]
+                  \item Remettez toutes les feuilles de l'examen.
+                  \item Seule la feuille de réponse sera corrigée.
+                  \item Utilisez les feuilles de question comme brouillon.
+              \end{itemize}
+    \end{itemize}
 }
 
 \newcommand{\CoverPage}{%
-  \setcounter{figure}{0} % Remet à zéro le compteur de figures
-  \HEHLogo{}
+    \setcounter{figure}{0} % Remet à zéro le compteur de figures
+    \HEHLogo{}
 
-  \vspace{1em}
+    \vspace{1em}
 
-  \textbf{\hehamc@examtitle{} \hfill{} \hehamc@cohort{}}
+    \textbf{\hehamc@examtitle{} \hfill{} \hehamc@cohort{}}
 
-  \vspace{1em}
+    \vspace{1em}
 
-  \section*{Consignes}
+    \section*{Consignes}
 
-  \begin{tcolorbox}
-    \textbf{Ne tournez pas cette page avant d'en avoir reçu l'autorisation.}
-  \end{tcolorbox}
+    \begin{tcolorbox}
+        \textbf{Ne tournez pas cette page avant d'en avoir reçu l'autorisation.}
+    \end{tcolorbox}
 
-  \Instructions{}
+    \Instructions{}
 
-  \clearpage{}
+    \clearpage{}
 } % Fin de la commande \CoverPage
 
 \newcommand{\AnswerSheet}{%
-  \AMCformBegin{}%
-  \textbf{\hehamc@examtitle{} \hfill{} \hehamc@cohort{}}
+    \AMCformBegin{}%
+    \textbf{\hehamc@examtitle{} \hfill{} \hehamc@cohort{}}
 
-  \vspace{1em}
+    \vspace{1em}
 
-  \begin{tabular}{@{}ll@{}}
-    \namefield{\tcbox[colback=white,title=Nom et prénom,title filled]{\begin{minipage}{.50\linewidth}%
-                                                                            \vspace{1cm}\namefielddots{}%
-                                                                            \vspace*{1mm}%
-                                                                          \end{minipage}}} &
-    \tcbox[bottomtitle=3pt,colback=white,title=Date,title filled]{\begin{minipage}{.325\linewidth}%
-                                                                      \vspace{1cm}\dotfill{}%
-                                                                      \vspace*{1mm}%
-                                                                    \end{minipage}}
-  \end{tabular}
+    \begin{tabular}{@{}ll@{}}
+        \namefield{\tcbox[colback=white,title=Nom et prénom,title filled]{\begin{minipage}{.50\linewidth}%
+                                                                                      \vspace{1cm}\namefielddots{}%
+                                                                                      \vspace*{1mm}%
+                                                                                  \end{minipage}}} &
+        \tcbox[bottomtitle=3pt,colback=white,title=Date,title filled]{\begin{minipage}{.325\linewidth}%
+                                                                              \vspace{1cm}\dotfill{}%
+                                                                              \vspace*{1mm}%
+                                                                          \end{minipage}}
+    \end{tabular}
 
-  \section*{Réponses}
+    \section*{Réponses}
 
-  \begin{tcolorbox}
-    \begin{itemize}[left=0pt,noitemsep]
-      \item \textbf{Encodage des réponses pour faciliter la lecture optique~:}
-            \begin{itemize}[nosep]
-              \item Utilisez un stylo-bille \textbf{bleu} standard ou \textbf{noir}, non-effaçable.
-              \item Noircissez complètement la case de votre choix.
-            \end{itemize}
-      \item \textbf{Modification de vos réponses~:}
-            \begin{itemize}[nosep]
-              \item Utilisez du correcteur liquide ou en ruban.
-              \item Ne redessinez pas les cases.
-            \end{itemize}
-    \end{itemize}
-  \end{tcolorbox}
+    \begin{tcolorbox}
+        \begin{itemize}[left=0pt,noitemsep]
+            \item \textbf{Encodage des réponses pour faciliter la lecture optique~:}
+                  \begin{itemize}[nosep]
+                      \item Utilisez un stylo-bille \textbf{bleu} standard ou \textbf{noir}, non-effaçable.
+                      \item Noircissez complètement la case de votre choix.
+                  \end{itemize}
+            \item \textbf{Modification de vos réponses~:}
+                  \begin{itemize}[nosep]
+                      \item Utilisez du correcteur liquide ou en ruban.
+                      \item Ne redessinez pas les cases.
+                  \end{itemize}
+        \end{itemize}
+    \end{tcolorbox}
 
-  \begin{multicols}{2}
-    \AMCformS{}
-  \end{multicols}
+    \begin{multicols}{2}
+        \AMCform{}
+    \end{multicols}
 } % Fin de la commande \AnswerSheet
 
 \newcommand{\DraftPage}{\clearpage{}\section*{Feuille de brouillon}\clearpage{}} % Crée une page de brouillon
