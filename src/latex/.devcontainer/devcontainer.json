@@ -9,11 +9,7 @@
         "aaron-bond.better-comments",
         "adpyke.codesnap",
         "editorconfig.editorconfig",
-        "GitHub.github-vscode-theme",
-        "James-Yu.latex-workshop",
-        "ms-vsliveshare.vsliveshare",
-        "visualstudioexptteam.vscodeintellicode",
-        "vscode-icons-team.vscode-icons"
+        "James-Yu.latex-workshop"
       ],
       "settings": {
         "codesnap.boxShadow": "rgba(0, 0, 0, 0.55) 0px 0px 0px",
@@ -22,12 +18,15 @@
         "codesnap.showWindowControls": false,
         "codesnap.shutterAction": "copy",
         "codesnap.transparentBackground": true,
-        "editor.fontFamily": "'FiraCode NF', 'FiraCode Nerd Font', 'Fira Code', 'FiraCode', Consolas, 'Courier New', monospace",
-        "editor.fontLigatures": false,
         "editor.formatOnSave": true,
-        "editor.rulers": [80, 120],
+        "editor.rulers": [
+          80,
+          120
+        ],
         "eslint.format.enable": false,
-        "eslint.validate": ["javascript"],
+        "eslint.validate": [
+          "javascript"
+        ],
         "extensions.ignoreRecommendations": true,
         "files.watcherExclude": {
           "**/.git/objects/**": true,
@@ -41,52 +40,12 @@
         "latex-workshop.latex.autoBuild.cleanAndRetry.enabled": false,
         "latex-workshop.latex.autoBuild.run": "never",
         "latex-workshop.latex.outDir": "%DIR%/out",
-        "latex-workshop.latex.recipe.default": "first",
-        "latex-workshop.latex.tools": [
-          {
-            "name": "latexmk",
-            "command": "latexmk",
-            "args": [
-              "-synctex=1",
-              "-silent",
-              "-xelatex",
-              "-interaction=nonstopmode",
-              "-file-line-error",
-              "-outdir=%OUTDIR%",
-              "--shell-escape",
-              "%DOC%"
-            ],
-            "env": {}
-          },
-          {
-            "name": "pdflatex",
-            "command": "pdflatex",
-            "args": [
-              "-synctex=1",
-              "-interaction=nonstopmode",
-              "-file-line-error",
-              "%DOC%"
-            ],
-            "env": {}
-          },
-          {
-            "name": "bibtex",
-            "command": "bibtex",
-            "args": ["%DOCFILE%"],
-            "env": {}
-          }
-        ],
         "latex-workshop.linting.chktex.enabled": true,
-        "latex-workshop.message.update.show": false,
         "latex-workshop.synctex.afterBuild.enabled": false,
         "latex-workshop.view.pdf.viewer": "tab",
         "telemetry.telemetryLevel": "off",
         "terminal.integrated.defaultProfile.linux": "zsh",
-        "window.autoDetectColorScheme": true,
         "workbench.editor.closeOnFileDelete": true,
-        "workbench.iconTheme": "vscode-icons",
-        "workbench.preferredDarkColorTheme": "GitHub Dark Default",
-        "workbench.preferredLightColorTheme": "GitHub Light Default",
         "workbench.tips.enabled": false,
         "workbench.welcomePage.walkthroughs.openOnInstall": false,
         "[latex]": {
