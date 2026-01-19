@@ -5,7 +5,7 @@
 % Auto Multiple Choice (AMC) conformes à la charte graphique HEH.
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{heh-amc}[2026/01/19 v0.1.1 Classe AMC pour la HEH]
+\ProvidesClass{heh-amc}[2025/12/29 v0.1.0 Classe AMC pour la HEH]
 
 % --- Vérification du moteur de compilation ---
 % Le package requiert LuaLaTeX pour fontspec et les polices OpenType
@@ -104,9 +104,13 @@
 
 % --- Formatage des questions ---
 \newlength{\hehamc@questionnumberlength}
-\settowidth{\hehamc@questionnumberlength}{99. }
-\renewcommand{\AMCbeginQuestion}[2]{\noindent\makebox[\hehamc@questionnumberlength][l]{\textbf{#1.}}}
+\settowidth{\hehamc@questionnumberlength}{\textbf{99. }}
 \renewcommand{\AMCformQuestion}[1]{\makebox[\hehamc@questionnumberlength][r]{\textbf{#1.}}}
+\ifhehamc@catalog
+  \renewcommand{\AMCbeginQuestion}[2]{\noindent\textbf{#1}}
+\else
+  \renewcommand{\AMCbeginQuestion}[2]{\noindent\makebox[\hehamc@questionnumberlength][l]{\textbf{#1.}}}
+\fi
 
 % --- Commandes personnalisées ---
 
