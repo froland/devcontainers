@@ -5,7 +5,7 @@
 % Auto Multiple Choice (AMC) conformes à la charte graphique HEH.
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{heh-amc}[2025/12/29 v0.1.0 Classe AMC pour la HEH]
+\ProvidesClass{heh-amc}[2026/01/19 v0.1.1 Classe AMC pour la HEH]
 
 % --- Vérification du moteur de compilation ---
 % Le package requiert LuaLaTeX pour fontspec et les polices OpenType
@@ -41,12 +41,12 @@
 \ProcessOptions\relax
 
 % Charge la classe de base article
-\LoadClass[12pt,french,a4paper]{article}
+\LoadClass[12pt,a4paper]{article}
 
 % --- Packages de base ---
 % Formatage du document et langue
 \RequirePackage{amsmath}   % Capacités mathématiques étendues
-\RequirePackage{babel}     % Support multilingue
+\RequirePackage[french]{babel}     % Support multilingue
 \RequirePackage{booktabs}  % Tableaux de meilleure qualité
 \RequirePackage{enumitem}  % Listes personnalisables
 \RequirePackage{graphicx}  % Gestion des images
