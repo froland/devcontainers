@@ -1,0 +1,4 @@
+[submodule "src/amc/latex"]
+	path = src/amc/latex
+	url = https://github.com/heh-dst/latex.git
+	branch = main
