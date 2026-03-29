@@ -1,7 +1,8 @@
 {
   "name": "latex",
   "build": {
-    "dockerfile": "Dockerfile"
+    "context": "..",
+    "dockerfile": "../Dockerfile"
   },
   "customizations": {
     "vscode": {
