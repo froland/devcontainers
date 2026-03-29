@@ -5,7 +5,7 @@ selected_scheme scheme-custom
 TEXDIR /usr/local/texlive/2026
 TEXMFCONFIG ~/.texlive2026/texmf-config
 TEXMFHOME ~/texmf
-TEXMFLOCAL /usr/share/texmf
+TEXMFLOCAL /usr/local/texlive/texmf-local
 TEXMFSYSCONFIG /etc/texmf
 TEXMFSYSVAR /var/lib/texmf
 TEXMFVAR ~/.texlive2026/texmf-var
