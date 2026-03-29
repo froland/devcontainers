@@ -23,13 +23,13 @@ RUN apt-get update \
   python3-venv \
   && rm -rf /var/lib/apt/lists/*
 
+ADD texlive.profile /tmp/texlive.profile
 RUN cd tmp \
   && curl -L -o install-tl-unx.tar.gz https://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz \
   && zcat < install-tl-unx.tar.gz | tar xf - \
   && cd install-tl-2* \
-  && perl ./install-tl --no-interaction \
+  && perl ./install-tl --no-interaction --profile=/tmp/texlive.profile \
   && rm -rf /tmp/install-tl*
-RUN su vscode -c "echo 'PATH=$PATH:/usr/local/texlive/2026/bin/x86_64-linux' >> $HOME/.profile"
 ADD --chown=vscode:vscode heh /tmp/heh
 RUN su vscode -c "tlmgr init-usertree && cd /tmp/heh/scripts && python3 install.py && rm -rf /tmp/heh"
 
