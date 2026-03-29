@@ -38,6 +38,10 @@ RUN apt-get update \
   texlive-science \
   && rm -rf /var/lib/apt/lists/*
 
+RUN tlmgr init-usertree
+COPY --chown=vscode:vscode heh /tmp/heh
+RUN cd /tmp/heh/scripts && python3 install.py && rm -rf /tmp/heh
+
 # Initialize font db
 RUN su vscode -c "lualatex --draftmode --interaction=nonstopmode --output-directory=/tmp '\documentclass{article}\begin{document}Hello, world!\end{document}'"
 

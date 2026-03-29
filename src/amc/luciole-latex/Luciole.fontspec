@@ -1,8 +1,0 @@
-\defaultfontfeatures[Luciole]
-  {
-  Extension      = .ttf ,
-  UprightFont    = *-Regular,
-  BoldFont       = *-Bold,
-  ItalicFont     = *-Regular-Italic,
-  BoldItalicFont = *-Bold-Italic,
-  }
