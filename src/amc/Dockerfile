@@ -29,17 +29,28 @@ RUN apt-get update \
   gnome-keyring \
   htop \
   libasound2-dev \
+  libc6 \
+  libcairo2 \
   libemail-address-perl \
   libemail-mime-perl \
   libemail-sender-perl \
   libgbm-dev \
+  libgcc-s1 \
+  libglib2.0-0t64 \
   libnotify4 \
   libnss3 \
+  libopencv-core410 \
+  libopencv-imgcodecs410 \
+  libopencv-imgproc410 \
   libopenoffice-oodoc-perl \
+  libpango-1.0-0 \
+  libpangocairo-1.0-0 \
+  libpoppler-glib8t64 \
   libreoffice-calc \
   libreoffice-gtk3 \
   libreoffice-java-common \
   libsecret-1-dev \
+  libstdc++6 \
   libx11-dev \
   libxkbfile-dev \
   libxss1 \
@@ -48,6 +59,7 @@ RUN apt-get update \
   nano \
   nautilus\
   ncdu \
+  perl \
   seahorse \
   tigervnc-common \
   tigervnc-standalone-server \
@@ -59,6 +71,7 @@ RUN apt-get update \
   xdg-utils \
   xfonts-base \
   xfonts-terminus \
+  xsltproc \
   xterm \
   && rm -rf /var/lib/apt/lists/*
 

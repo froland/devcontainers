@@ -31,7 +31,7 @@ RUN cd tmp \
   && perl ./install-tl --no-interaction --profile=/tmp/texlive.profile \
   && rm -rf /tmp/install-tl*
 ADD texlive-dummy_1.0_all.deb /tmp/texlive-dummy_1.0_all.deb
-RUN dpkg -i texlive-dummy_1.0_all.deb && rm -f texlive-dummy_1.0_all.deb
+RUN dpkg -i /tmp/texlive-dummy_1.0_all.deb && rm -f /tmtexlive-dummy_1.0_all.deb
 ADD --chown=vscode:vscode heh /tmp/heh
 RUN su vscode -c "tlmgr init-usertree && cd /tmp/heh/scripts && python3 install.py && rm -rf /tmp/heh"
 

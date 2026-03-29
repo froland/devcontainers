@@ -1,0 +1,27 @@
+### Commented entries have reasonable defaults.
+### Uncomment to edit them.
+# Source: texlive
+Section: misc
+Priority: optional
+Homepage: https://tug.org/texlive/
+Standards-Version: 3.9.2
+
+Package: texlive-dummy
+# Version: <enter version here; defaults to 1.0>
+Maintainer: Francois Roland <francois.roland@heh.be>
+# Pre-Depends: <comma-separated list of packages>
+# Depends: <comma-separated list of packages>
+# Recommends: <comma-separated list of packages>
+# Suggests: <comma-separated list of packages>
+Provides: tex-gyre,texlive,texlive-base,texlive-bibtex-extra,texlive-binaries,texlive-extra-utils,texlive-fonts-recommended,texlive-font-utils,texlive-fonts-extra,texlive-fonts-extra-links,texlive-lang-french,texlive-latex-base,texlive-latex-extra,texlive-latex-recommended,texlive-luatex,texlive-pictures,texlive-pstricks,texlive-publishers,texlive-science,texlive-xetex
+Replaces: tex-gyre,texlive,texlive-base,texlive-bibtex-extra,texlive-binaries,texlive-extra-utils,texlive-fonts-recommended,texlive-font-utils,texlive-fonts-extra,texlive-fonts-extra-links,texlive-lang-french,texlive-latex-base,texlive-latex-extra,texlive-latex-recommended,texlive-luatex,texlive-pictures,texlive-pstricks,texlive-publishers,texlive-science,texlive-xetex
+# Architecture: all
+# Multi-Arch: <one of: foreign|same|allowed>
+# Copyright: <copyright file; defaults to GPL2>
+# Changelog: <changelog file; defaults to a generic changelog>
+# Readme: <README.Debian file; defaults to a generic one>
+# Extra-Files: <comma-separated list of additional files for the doc directory>
+# Links: <pair of space-separated paths; First is path symlink points at, second is filename of link>
+# Files: <pair of space-separated paths; First is file to include, second is destination>
+#  <more pairs, if there's more than one file to include. Notice the starting space>
+Description: Paquet fictif pour remplacer le package texlive d'Ubuntu
