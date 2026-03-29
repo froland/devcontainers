@@ -39,7 +39,7 @@ RUN apt-get update \
   && rm -rf /var/lib/apt/lists/*
 
 RUN tlmgr init-usertree
-COPY --chown=vscode:vscode heh /tmp/heh
+ADD --chown=vscode:vscode heh /tmp/heh
 RUN cd /tmp/heh/scripts && python3 install.py && rm -rf /tmp/heh
 
 # Initialize font db
