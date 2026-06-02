@@ -29,9 +29,11 @@ RUN cd tmp \
   && zcat < install-tl-unx.tar.gz | tar xf - \
   && cd install-tl-2* \
   && perl ./install-tl --no-interaction --profile=/tmp/texlive.profile \
-  && rm -rf /tmp/install-tl*
+  && cd /tmp \
+  && rm -rf /tmp/install-tl* \
+  && tlmgr update --self --all
 ADD texlive-dummy_1.0_all.deb /tmp/texlive-dummy_1.0_all.deb
-RUN dpkg -i /tmp/texlive-dummy_1.0_all.deb && rm -f /tmtexlive-dummy_1.0_all.deb
+RUN dpkg -i /tmp/texlive-dummy_1.0_all.deb && rm -f /tmp/texlive-dummy_1.0_all.deb
 ADD --chown=vscode:vscode heh /tmp/heh
 RUN su vscode -c "tlmgr init-usertree && cd /tmp/heh/scripts && python3 install.py && rm -rf /tmp/heh"
 
