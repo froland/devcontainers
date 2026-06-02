@@ -73,7 +73,8 @@ RUN apt-get update \
   xfonts-terminus \
   xsltproc \
   xterm \
-  && rm -rf /var/lib/apt/lists/*
+  && rm -rf /var/lib/apt/lists/* \
+  && mktexlsr
 
 USER vscode
 
