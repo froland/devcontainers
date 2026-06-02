@@ -1,10 +1,10 @@
-ARG VARIANT="questing"
+ARG VARIANT="resolute"
 FROM buildpack-deps:${VARIANT}-curl
 
 LABEL dev.containers.features="common"
 
 ARG VARIANT
-RUN if [ "$VARIANT" = "questing" ]; then \
+RUN if [ "$VARIANT" = "resolute" ]; then \
       if id "ubuntu" &>/dev/null; then \
         echo "Deleting user 'ubuntu'  for $VARIANT" && userdel -f -r ubuntu || echo "Failed to delete ubuntu user for $VARIANT"; \
       else \
